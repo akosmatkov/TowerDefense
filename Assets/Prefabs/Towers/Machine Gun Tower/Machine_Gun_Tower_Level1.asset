@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d995123738b564d9acc2d36b91e41b, type: 3}
+  m_Name: Machine_Gun_Tower_Level1
+  m_EditorClassIdentifier: 
+  towerPrefab: {fileID: 5105759543803693276, guid: af38f8bab37b09248a96b4e80b3b9cf4,
+    type: 3}
+  towerUpgradeCost: 50
+  damageModifier: 5
+  pylonEnergyToSpawn: 0

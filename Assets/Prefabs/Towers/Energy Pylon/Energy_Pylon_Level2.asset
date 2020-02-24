@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d995123738b564d9acc2d36b91e41b, type: 3}
+  m_Name: Energy_Pylon_Level2
+  m_EditorClassIdentifier: 
+  towerPrefab: {fileID: 983158327485499498, guid: 58292c9c4bf110e4eaadde9987620c2e,
+    type: 3}
+  towerUpgradeCost: 75
+  damageModifier: 0
+  pylonEnergyToSpawn: 20
