@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 3983100844901191814}
   - component: {fileID: 4400595702013535146}
   - component: {fileID: 5149451493769794575}
+  - component: {fileID: 3634346863143871632}
   m_Layer: 2
   m_Name: Machine_Gun_Tower_Level2
   m_TagString: Player
@@ -187,6 +188,25 @@ MonoBehaviour:
     type: 3}
   timeBetweenAttacks: 0.3
   attackTimer: 0
+--- !u!95 &3634346863143871632
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5105759543803693276}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b27255139c817144b9e32bdb60204960, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8403030805494701044
 GameObject:
   m_ObjectHideFlags: 0
