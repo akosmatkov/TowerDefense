@@ -3,29 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 using TowerDefense.Movement;
 
-public class WaveSpawner : MonoBehaviour
+namespace TowerDefense.Core
 {
-    [SerializeField] WaveConfig[] waves = null;
-    [SerializeField] float timeBetweenWavesSpawn = 10f;
-
-    // Start is called before the first frame update
-    void Start()
+    public class WaveSpawner : MonoBehaviour
     {
-        StartCoroutine(SpawnWave());
-    }
+        [SerializeField] WaveConfig[] waves = null;
+        [SerializeField] float timeBetweenWavesSpawn = 10f;
 
-    IEnumerator SpawnWave()
-    {
-        foreach(WaveConfig waveConfig in waves)
+        void Start()
         {
-            for(int i = 0; i < waveConfig.GetNumberOfEnemies(); i++)
-            {
-                GameObject enemy = Instantiate(waveConfig.GetEnemyPrefab(), transform.position, Quaternion.identity);
-                enemy.GetComponent<EnemyMovement>().SetWaypointsPrefab(waveConfig.GetWaypointsPrefab());
+            StartCoroutine(SpawnWave());
+        }
 
-                yield return new WaitForSeconds(waveConfig.GetTimeBetweenSpawns());
+        IEnumerator SpawnWave()
+        {
+            foreach (WaveConfig waveConfig in waves)
+            {
+                for (int i = 0; i < waveConfig.GetNumberOfEnemies(); i++)
+                {
+                    GameObject enemy = Instantiate(waveConfig.GetEnemyPrefab(), transform.position, Quaternion.identity);
+                    enemy.GetComponent<EnemyMovement>().SetWaypointsPrefab(waveConfig.GetWaypointsPrefab());
+
+                    yield return new WaitForSeconds(waveConfig.GetTimeBetweenSpawns());
+                }
+                yield return new WaitForSeconds(timeBetweenWavesSpawn);
             }
-            yield return new WaitForSeconds(timeBetweenWavesSpawn);
+        }
+
+        public int GetNumberOfEnemies()
+        {
+            int numberOfEnemies = 0;
+            foreach (WaveConfig waveConfig in waves)
+            {
+                numberOfEnemies += waveConfig.GetNumberOfEnemies();
+            }
+
+            return numberOfEnemies;
         }
     }
+
 }

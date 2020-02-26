@@ -36,28 +36,41 @@ namespace TowerDefense.Core
 
         public void GetDamage(float damage)
         {
-            if (currentHealth > 0)
+            if (!isDead)
             {
-                currentHealth -= damage;
+                if (currentHealth > 0)
+                {
+                    currentHealth -= damage;
 
-                UpdateHealthBarSlider();
-            }
-            if (currentHealth <= 0)
-            {
-                if (gameObject.tag == "PlayerBase")
-                {
-                    gameSession.ShowLoseMenu();
+                    UpdateHealthBarSlider();
                 }
-                else
+                if (currentHealth <= 0)
                 {
-                    StartCoroutine(Die());
+                    if (gameObject.tag == "PlayerBase")
+                    {
+                        gameSession.ShowLoseMenu();
+                    }
+                    else
+                    {
+                        StartCoroutine(Die());
+                    }
                 }
             }
         }
 
         IEnumerator Die()
         {
-            isDead = true;
+            if(!isDead)
+            {
+                gameSession.DecreaseNumberOfEnemies();
+
+                var towers = FindObjectsOfType<TowerAI>();
+                foreach (var tower in towers)
+                {
+                    tower.RemoveFromTargetList(this.transform);
+                }
+            }
+            isDead = true;        
 
             FindObjectOfType<TowerManager>().IncreaseMoneyValue(moneyReward);
 
@@ -74,12 +87,6 @@ namespace TowerDefense.Core
             if(deathVfx != null)
             {
                 Instantiate(deathVfx, transform.position, Quaternion.identity);
-            }
-
-            var towers = FindObjectsOfType<TowerAI>();
-            foreach(var tower in towers)
-            {
-                tower.RemoveFromTargetList(this.transform);
             }
 
             healthBarSlider.transform.parent.gameObject.SetActive(false);

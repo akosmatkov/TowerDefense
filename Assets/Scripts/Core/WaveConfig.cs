@@ -3,31 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using TowerDefense.Movement;
 
-[CreateAssetMenu(fileName = "WaveConfig", menuName = "Wave/Create New Wave", order = 0)]
-public class WaveConfig : ScriptableObject
+namespace TowerDefense.Core
 {
-    [SerializeField] GameObject enemyPrefab = null;
-    [SerializeField] EnemyWaypoints waypointsPrefab = null;
-    [SerializeField] float timeBetweenSpawns = 2f;
-    [SerializeField] int numberOfEnemies = 5;
-
-    public GameObject GetEnemyPrefab()
+    [CreateAssetMenu(fileName = "WaveConfig", menuName = "Wave/Create New Wave", order = 0)]
+    public class WaveConfig : ScriptableObject
     {
-        return enemyPrefab;
-    }
+        [SerializeField] GameObject enemyPrefab = null;
+        [SerializeField] EnemyWaypoints waypointsPrefab = null;
+        [SerializeField] float timeBetweenSpawns = 2f;
+        [SerializeField] int numberOfEnemies = 5;
 
-    public EnemyWaypoints GetWaypointsPrefab()
-    {
-        return waypointsPrefab;
-    }
+        public GameObject GetEnemyPrefab()
+        {
+            return enemyPrefab;
+        }
 
-    public float GetTimeBetweenSpawns()
-    {
-        return timeBetweenSpawns;
-    }
+        public EnemyWaypoints GetWaypointsPrefab()
+        {
+            return waypointsPrefab;
+        }
 
-    public int GetNumberOfEnemies()
-    {
-        return numberOfEnemies;
+        public float GetTimeBetweenSpawns()
+        {
+            return timeBetweenSpawns;
+        }
+
+        public int GetNumberOfEnemies()
+        {
+            return numberOfEnemies;
+        }
     }
 }
