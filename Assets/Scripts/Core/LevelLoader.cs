@@ -13,13 +13,6 @@ namespace TowerDefense.Core
 
         private void Awake()
         {
-            if (FindObjectsOfType<LevelLoader>().Length > 1)
-            {
-                Destroy(this);
-            }
-            else
-                DontDestroyOnLoad(this);
-
             animator = levelLoadAnimator.GetComponent<Animator>();
         }
 

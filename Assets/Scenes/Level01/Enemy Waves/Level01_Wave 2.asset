@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c685e4b12b270be41aff9c3481ec64af, type: 3}
-  m_Name: Test_Scene_Wave
+  m_Name: Level01_Wave 2
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1277372032105498991, guid: f0ddf830b1a33864fb71baa94843fb0d,
     type: 3}
   waypointsPrefab: {fileID: 3607578523517031820, guid: 996d97a5a125dca47b0e1da0dfd9dfe3,
     type: 3}
-  timeBetweenSpawns: 6
-  numberOfEnemies: 5
+  timeBetweenSpawns: 4
+  numberOfEnemies: 9
