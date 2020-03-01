@@ -162,6 +162,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level_Load_Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3773545044549554430, guid: f2b444b3d673b974db2a204cd9564a73,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3773545045255176012, guid: f2b444b3d673b974db2a204cd9564a73,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2b444b3d673b974db2a204cd9564a73, type: 3}
 --- !u!1 &3068004999377313110 stripped

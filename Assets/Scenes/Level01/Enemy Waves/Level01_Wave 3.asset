@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c685e4b12b270be41aff9c3481ec64af, type: 3}
   m_Name: Level01_Wave 3
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1018284094484453011, guid: f38eb7cd25ed1e04aa8bfc1fffea6cd4,
+  enemyPrefab: {fileID: 1277372032105498991, guid: f0ddf830b1a33864fb71baa94843fb0d,
     type: 3}
-  waypointsPrefab: {fileID: 3607578523517031820, guid: 996d97a5a125dca47b0e1da0dfd9dfe3,
+  waypointsPrefab: {fileID: 1962904376371695386, guid: d985f1365f0dff5489c6aa3bb5d9ed25,
     type: 3}
   timeBetweenSpawns: 4
-  numberOfEnemies: 1
+  numberOfEnemies: 7

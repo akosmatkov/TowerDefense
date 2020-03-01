@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1277372032105498991, guid: f0ddf830b1a33864fb71baa94843fb0d,
     type: 3}
-  waypointsPrefab: {fileID: 1962904376371695386, guid: d985f1365f0dff5489c6aa3bb5d9ed25,
+  waypointsPrefab: {fileID: 3607578523517031820, guid: 996d97a5a125dca47b0e1da0dfd9dfe3,
     type: 3}
   timeBetweenSpawns: 4
-  numberOfEnemies: 7
+  numberOfEnemies: 9
