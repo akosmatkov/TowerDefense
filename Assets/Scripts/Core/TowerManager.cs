@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TowerDefense.UI;
 
 namespace TowerDefense.Core
 {
     public class TowerManager : MonoBehaviour
     {
-        [SerializeField] float currentMoneyValue = 500f;
+        [SerializeField] float currentEnergyValue = 500f;
 
         GameObject selectedTower = null;
         AudioSource audioSource;
@@ -17,26 +15,26 @@ namespace TowerDefense.Core
             audioSource = GetComponent<AudioSource>();
         }
 
-        public void DecreaseMoneyValue(float cost)
+        public void DecreaseEnergyValue(float cost)
         {
-            currentMoneyValue -= cost;
-            UpdateMoneyValueText();
+            currentEnergyValue -= cost;
+            UpdateEnergyValueText();
         }
 
-        public void IncreaseMoneyValue(float reward)
+        public void IncreaseEnergyValue(float reward)
         {
-            currentMoneyValue += reward;
-            UpdateMoneyValueText();
+            currentEnergyValue += reward;
+            UpdateEnergyValueText();
         }
 
-        public float GetMoneyValue()
+        public float GetEnergyValue()
         {
-            return currentMoneyValue;
+            return currentEnergyValue;
         }
 
-        private void UpdateMoneyValueText()
+        private void UpdateEnergyValueText()
         {
-            FindObjectOfType<MainGameCanvasManager>().UpdateMoneyValueText(currentMoneyValue);
+            FindObjectOfType<MainGameCanvasManager>().UpdateEnergyValueText(currentEnergyValue);
         }
 
         public void SetSelectedTower(GameObject tower)
@@ -49,14 +47,14 @@ namespace TowerDefense.Core
             return selectedTower;
         }
 
-        public bool CheckCurrenMoneyValue()
+        public bool CheckCurrenEnergyValue()
         {
-            return currentMoneyValue > selectedTower.GetComponent<Tower>().GetTowerCost();
+            return currentEnergyValue > selectedTower.GetComponent<Tower>().GetTowerCost();
         }
 
         public void BuildTower(Transform nodeTransform, GameObject nodeImage)
         {
-            if (selectedTower!= null && selectedTower.GetComponent<Tower>().GetTowerCost() <= currentMoneyValue)
+            if (selectedTower!= null && selectedTower.GetComponent<Tower>().GetTowerCost() <= currentEnergyValue)
             {
                 var newTower = Instantiate(selectedTower, nodeTransform.position, Quaternion.identity);
                 newTower.transform.parent = nodeTransform;
@@ -64,8 +62,8 @@ namespace TowerDefense.Core
 
                 audioSource.Play();
 
-                DecreaseMoneyValue(selectedTower.GetComponent<Tower>().GetTowerCost());
-                UpdateMoneyValueText();
+                DecreaseEnergyValue(selectedTower.GetComponent<Tower>().GetTowerCost());
+                UpdateEnergyValueText();
 
                 nodeImage.SetActive(false);
                 

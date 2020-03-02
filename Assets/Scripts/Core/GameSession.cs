@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace TowerDefense.Core
@@ -12,9 +11,12 @@ namespace TowerDefense.Core
 
         private int numberOfEnemies = 0;
 
+        AudioSource audioSouce;
         private void Awake()
         {
             Time.timeScale = 1;
+
+            audioSouce = GetComponent<AudioSource>();
 
             numberOfEnemies = FindObjectOfType<WaveSpawner>().GetNumberOfEnemies();
         }
@@ -27,6 +29,7 @@ namespace TowerDefense.Core
 
         public void ShowLoseMenu()
         {
+            audioSouce.Stop();
             Time.timeScale = 0;
             loseMenu.SetActive(true);
         }
@@ -50,6 +53,7 @@ namespace TowerDefense.Core
         {
             yield return new WaitForSeconds(3f);
 
+            audioSouce.Stop();
             Time.timeScale = 0;
 
             if(winMenu != null)

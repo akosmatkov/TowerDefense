@@ -1,14 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class EffectDestroyer : MonoBehaviour
+namespace TowerDefense.Core
 {
-    private void Update()
+    public class EffectDestroyer : MonoBehaviour
     {
-        if(!GetComponent<ParticleSystem>().IsAlive())
+        private void Update()
         {
-            Destroy(gameObject);
+            if (!GetComponent<ParticleSystem>().IsAlive())
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

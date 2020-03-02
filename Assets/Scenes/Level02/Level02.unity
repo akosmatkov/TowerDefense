@@ -2740,6 +2740,11 @@ PrefabInstance:
       propertyPath: currentMoneyValue
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 3608517895557956098, guid: 66797f089d6b3e74abf00f64cc55b026,
+        type: 3}
+      propertyPath: currentEnergyValue
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3880609744909032466, guid: 66797f089d6b3e74abf00f64cc55b026,
         type: 3}
       propertyPath: m_AnchoredPosition.y

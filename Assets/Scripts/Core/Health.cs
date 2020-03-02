@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TowerDefense.AI;
 using UnityEngine.UI;
@@ -72,7 +71,7 @@ namespace TowerDefense.Core
             }
             isDead = true;        
 
-            FindObjectOfType<TowerManager>().IncreaseMoneyValue(moneyReward);
+            FindObjectOfType<TowerManager>().IncreaseEnergyValue(moneyReward);
 
             if (enemyAI != null)
             {

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TowerDefense.Core;
 using UnityEngine.UI;
 
@@ -8,7 +6,7 @@ namespace TowerDefense.UI
 {
     public class MainGameCanvasManager : MonoBehaviour
     {
-        [SerializeField] Text moneyValueText = null;
+        [SerializeField] Text energyValueText = null;
 
         TowerManager towerManager;
 
@@ -19,12 +17,12 @@ namespace TowerDefense.UI
 
         void Start()
         {
-            moneyValueText.text = towerManager.GetMoneyValue().ToString();
+            energyValueText.text = towerManager.GetEnergyValue().ToString();
         }
 
-        public void UpdateMoneyValueText(float valueText)
+        public void UpdateEnergyValueText(float valueText)
         {
-            moneyValueText.text = valueText.ToString();
+            energyValueText.text = valueText.ToString();
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "TowerLevelConfig", menuName = "TowerLevelConfig/CreateNewConfig", order = 0)]
 public class TowerLevelConfig : ScriptableObject

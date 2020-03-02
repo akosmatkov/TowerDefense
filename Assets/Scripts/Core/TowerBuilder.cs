@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using TowerDefense.Combat;
+﻿using UnityEngine;
 
 namespace TowerDefense.Core
 {

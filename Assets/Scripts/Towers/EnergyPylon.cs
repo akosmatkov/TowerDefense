@@ -1,7 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TowerDefense.UI;
 
 namespace TowerDefense.Core
@@ -28,7 +26,7 @@ namespace TowerDefense.Core
         IEnumerator SpawnEnergy()
         {
             yield return new WaitForSeconds(timeBetweenEnergySpawns);
-            towerManager.IncreaseMoneyValue(tower.GetPylonEnergy());
+            towerManager.IncreaseEnergyValue(tower.GetPylonEnergy());
 
             energyTextSpawner.SpawnEnergyText(tower.GetPylonEnergy());
 

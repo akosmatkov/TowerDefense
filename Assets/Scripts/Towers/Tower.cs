@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TowerDefense.Combat;
 using TowerDefense.UI;
 using UnityEngine.UI;
@@ -60,7 +58,7 @@ namespace TowerDefense.Core
             PlaceTower(currentTowerLevel);
             Instantiate(towerUpgradeVfx, transform.position, Quaternion.identity);
 
-            towerManager.DecreaseMoneyValue(towerLevelConfigs[currentTowerLevel - 1].GetTowerUpgradeCost());
+            towerManager.DecreaseEnergyValue(towerLevelConfigs[currentTowerLevel - 1].GetTowerUpgradeCost());
             upgradeCostText.text = towerLevelConfigs[currentTowerLevel].GetTowerUpgradeCost().ToString();
 
             if (CheckShooterComponent())
@@ -83,7 +81,7 @@ namespace TowerDefense.Core
 
         public void CheckTowerUpgradeCost()
         {
-            if(towerLevelConfigs[currentTowerLevel].GetTowerUpgradeCost() <= towerManager.GetMoneyValue())
+            if(towerLevelConfigs[currentTowerLevel].GetTowerUpgradeCost() <= towerManager.GetEnergyValue())
             {
                 UpgradeTower();
             }
